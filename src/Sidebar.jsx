@@ -35,7 +35,7 @@ const Sidebar = () => {
 
       <div className="sidebar">
         <ul>
-          <Link to="/home">
+          <Link to="/">
             <li onClick={(e) => handleClick(e)}>Home</li>
           </Link>
           <Link to="/services">
