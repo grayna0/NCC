@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+  const [showClose,setShowClose] =useState(false)
   const handleClick = (event) => {
     const listItems = document.querySelectorAll(".sidebar ul li");
     listItems.forEach((item) => {
@@ -15,12 +16,15 @@ const Sidebar = () => {
 
     sidebar.style.display = "block";
     meniIcon.style.display = "none";
+    setShowClose(true)
   };
   const hideSidebar = () => {
     const sidebar = document.querySelector(".sidebar");
     const meniIcon = document.querySelector(".menu-icon");
     sidebar.style.display = "none";
     meniIcon.style.display = "block";
+    setShowClose(false)
+
   };
 
   return (
@@ -47,9 +51,11 @@ const Sidebar = () => {
             <li onClick={(e) => handleClick(e)}>Contact</li>
           </Link>
         </ul>
+        {showClose &&
         <p className="close" onClick={hideSidebar}>
           X
         </p>
+        }
       </div>
     </>
   );
