@@ -18,7 +18,7 @@ const newsData = [
 ];
 const New = () => {
   return (
-    <div className="news">
+    <div className="news contain">
       <div className="logo">
         <img src="logoNCC.png" alt="logoNCC" />
       </div>
